@@ -8,3 +8,5 @@ build
 *.swo
 *.pyc
 .testrepository
+#IntelJ Idea
+.idea/

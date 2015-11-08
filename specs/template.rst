@@ -19,7 +19,7 @@ respectively.
 
 Some notes about using this template:
 
-* Your spec should be in ReSTructured text, like this template.
+* Your spec should be in reStructuredText, like this template.
 
 * Please wrap text at 79 columns.
 
