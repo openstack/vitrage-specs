@@ -30,13 +30,11 @@ Specifications have to be re-proposed for every release.  The review may be
 quick, but even if something was previously approved, it should be re-reviewed
 to make sure it still makes sense as written.
 
-Prior to the Kilo development cycle this repository was not used for
-spec reviews. Reviews prior to Juno were completed entirely through
 Launchpad blueprints::
 
   http://blueprints.launchpad.net/vitrage
 
-Starting from the Kilo-1 development milestone Vitrage performs the pilot of
+Starting from the Mitaka-1 development milestone Vitrage performs the pilot of
 the specs repos approach.
 
 Please note, Launchpad blueprints are still used for tracking the
