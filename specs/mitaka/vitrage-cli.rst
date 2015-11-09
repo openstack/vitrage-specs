@@ -4,9 +4,9 @@
 
  http://creativecommons.org/licenses/by/3.0/legalcode
 
-==========================================
+===========
 Vitrage CLI
-==========================================
+===========
 
 Vitrage Project introduces a Root Cause Analysis (RCA) engine
 for organizing, analyzing and expanding OpenStack alarms & events.
