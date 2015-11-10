@@ -35,7 +35,7 @@ on the Vitrage API.
 Problem description
 ===================
 
-As a user I would like to be able to see the root cause of any alerts or events in my system.
+As a user I would like to be able to see the root cause of any alerts or events in the system.
 A command line utility will be used to communicate with Vitrage API service.
 The CLI will 3 types of commands:
 
