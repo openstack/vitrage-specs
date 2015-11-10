@@ -4,9 +4,9 @@
 
  http://creativecommons.org/licenses/by/3.0/legalcode
 
-==========================================
+============
 Synchronizer
-==========================================
+============
 
 
 https://blueprints.launchpad.net/vitrage/+spec/synchronizer
@@ -78,7 +78,7 @@ design
 ------
 
 northbound interface
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 get all
 """""""
@@ -98,7 +98,7 @@ change notifications
     - or to a queue (which would be installed as part of the synchronizer deployment)
 
 southband interface
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 ::
 
@@ -171,12 +171,12 @@ southband interface
 - deployment - as a library
  
 consumer flow
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 - 'get all' - for a complete snapshot of OS services, the consumer would call the 'get all' interface
 - 'change notification' - for a streaming change notifications, the consumer would normally:
     - register for change notifications against the queue
-    - then immediatly call the 'get all' interface to have the latest snapshot
-    - over time, excersize each notification which was sampled after this snapshot, over it, in order to have the latest view of the OS services
+    - then immediately call the 'get all' interface to have the latest snapshot
+    - over time, exercise each notification which was sampled after this snapshot, over it, in order to have the latest view of the OS services
 
 
 Alternatives
