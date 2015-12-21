@@ -64,7 +64,7 @@ No data is stored or cached.
 REST API impact
 ---------------
 
-TBD
+Will implement the api of vitrage-api service
 
 Versioning impact
 -----------------
@@ -131,3 +131,4 @@ References
 ==========
 
 `Vitrage project <https://wiki.openstack.org/wiki/Vitrage>`_
+the get topology api blueprint https://blueprints.launchpad.net/vitrage/+spec/get-topology-api
