@@ -10,7 +10,7 @@ Evaluator Engine
 
 Launchpad blueprint:
 
-https://blueprints.launchpad.net/vitrage/+spec/evalutor-engine
+https://blueprints.launchpad.net/vitrage/+spec/evaluator-engine
 
 Vitrage Evaluator serves as workflow manager controlling the analysis and activation of templates and execution of template actions.
 
@@ -40,7 +40,7 @@ Evaluator engine is the main core of Vitrage evaluator which responsible for man
 
 
 Problem description
-====================
+===================
 
 Vitrage requires a component that is responsible for managing and executing templates, which are the basis for the different algorithms used in Vitrage, such as RCA.
 
@@ -68,7 +68,7 @@ None
 
 Data model impact
 -----------------
-The templates are saved in NetworkX graph-base in memeory DB.
+The templates are saved in NetworkX graph-base in memory DB.
 
 REST API impact
 ---------------

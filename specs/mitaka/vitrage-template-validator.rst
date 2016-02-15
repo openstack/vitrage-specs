@@ -18,14 +18,14 @@ Template Validator ensures that a new template is correct. Meaning, it conforms 
 
 
 Problem description
-====================
+===================
 
 Templates do not always meet the Vitrage Template Standard. For example, unsupported action, invalid alarm name, incorrect graph template and etc.
 
 Proposed change
 ===============
 
-Tamplate validator is a part of Vitrage Evaluator. It receives a template, runs over it and checks its correctness.
+Template validator is a part of Vitrage Evaluator. It receives a template, runs over it and checks its correctness.
 If the template is valid, it notify the Evaluator Engine which inserts the template into the template DB. Otherwise, insertion is failed.
 
 Alternatives

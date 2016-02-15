@@ -4,9 +4,9 @@
 
  http://creativecommons.org/licenses/by/3.0/legalcode
 
-================================
+===================================
 Vitrage System Health Visualization
-================================
+===================================
 
 https://blueprints.launchpad.net/vitrage-dashboard/+spec/ui-system-health-sunburst
 
