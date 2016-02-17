@@ -27,6 +27,8 @@ The plugin should support two modes:
 
 This blueprint refers to get_all implementation.
 
+As a first stage, we will support only Nagios 3.
+
 Proposed change
 ===============
 
@@ -55,30 +57,37 @@ Data model impact
 
 Nagios event will look like that:
 
-+-------------+--------------------------------------+------------------------+
-| Field       | Description                          | Examples               |
-+=============+======================================+========================+
-| host        | name of Nagios host                  | - compute-0-0.local    |
-|             |                                      | - os-glance-00.local   |
-|             |                                      | - ilo.node14           |
-+-------------+--------------------------------------+------------------------+
-| service     | name of Nagios service (test)        | - CPU load             |
-|             |                                      | - check_ceph_health    |
-+-------------+--------------------------------------+------------------------+
-| status      | the status of the service            | - OK                   |
-|             |                                      | - WARNING              |
-|             |                                      | - CRITICAL             |
-|             |                                      | - UNKNOWN              |
-+-------------+--------------------------------------+------------------------+
-| last_check  | last time the service was checked    | 2016-01-04 19:17:10    |
-+-------------+--------------------------------------+------------------------+
-| duration    | duration since the last status change| 1d 2h 55m 48s          |
-+-------------+--------------------------------------+------------------------+
-| attempt     | how many attempts were made          | 1/3                    |
-+-------------+--------------------------------------+------------------------+
-| status_info | additional information               | OK - 15min load 1.66   |
-|             |                                      |      at 32 CPUs        |
-+-------------+--------------------------------------+------------------------+
++---------------+--------------------------------------+----------------------+
+| Field         | Description                          | Examples             |
++===============+======================================+======================+
+| resource_name | name of Nagios host                  | - compute-0-0.local  |
+|               |                                      | - os-glance-00.local |
+|               |                                      | - ilo.node14         |
++---------------+--------------------------------------+----------------------+
+| resource_type | type of Nagios host                  | - nova.host          |
+|               |                                      | - nova.instance      |
+|               |                                      | - switch             |
++---------------+--------------------------------------+----------------------+
+| service       | name of Nagios service (test)        | - CPU load           |
+|               |                                      | - check_ceph_health  |
++---------------+--------------------------------------+----------------------+
+| status        | the status of the service            | - OK                 |
+|               |                                      | - WARNING            |
+|               |                                      | - CRITICAL           |
+|               |                                      | - UNKNOWN            |
++---------------+--------------------------------------+----------------------+
+| last_check    | last time the service was checked    | 2016-01-04 19:17:10  |
++---------------+--------------------------------------+----------------------+
+| duration      | duration since the last status change| 1d 2h 55m 48s        |
++---------------+--------------------------------------+----------------------+
+| attempt       | how many attempts were made          | 1/3                  |
++---------------+--------------------------------------+----------------------+
+| status_info   | additional information               | OK - 15min load 1.66 |
+|               |                                      |      at 32 CPUs      |
++---------------+--------------------------------------+----------------------+
+| sync_type     | the source of information            | nagios               |
+|               |                                      | (constant value)     |
++---------------+--------------------------------------+----------------------+
 
 
 
@@ -140,10 +149,13 @@ This blueprint requires unit tests and Tempest tests.
 Documentation Impact
 ====================
 
-None
+Nagios Configuration should be documented
 
 References
 ==========
+
+Nagios Configuration:
+https://github.com/openstack/vitrage/blob/master/doc/source/nagios-config.rst
 
 Synchronizer main blueprint:
 https://github.com/openstack/vitrage-specs/blob/master/specs/mitaka/vitrage-synchronizer.rst
