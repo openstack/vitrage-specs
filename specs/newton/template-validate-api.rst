@@ -51,7 +51,7 @@ Template Validate
 
 Validate Vitrage template(s)
 
-GET /
+POST /
 ~~~~~
 
 Headers
