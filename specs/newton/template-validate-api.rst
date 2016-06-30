@@ -4,9 +4,9 @@
 
  http://creativecommons.org/licenses/by/3.0/legalcode
 
-========================
-Vitrage Get Topology API
-========================
+===============================
+Vitrage Template Validation API
+===============================
 
 https://blueprints.launchpad.net/vitrage/+spec/template-validate-api
 
@@ -47,7 +47,7 @@ REST API impact
 ---------------
 
 Template Validate
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 Validate Vitrage template(s)
 
@@ -107,25 +107,24 @@ Response Examples
 ^^^^^^^^^^^^^^^^^
 
 ::
-
-{
-  "results": [
     {
-      "status": "validation failed",
-      "file path": "/tmp/templates/basic_no_meta.yaml",
-      "description": "Template syntax validation",
-      "message": "metadata is a mandatory section.",
-      "status code": 62
-    },
-    {
-      "status": "validation OK",
-      "file path": "/tmp/templates/basic.yaml",
-      "description": "Template validation",
-      "message": "Template validation is OK",
-      "status code": 4
+      "results": [
+        {
+          "status": "validation failed",
+          "file path": "/tmp/templates/basic_no_meta.yaml",
+          "description": "Template syntax validation",
+          "message": "metadata is a mandatory section.",
+          "status code": 62
+        },
+        {
+          "status": "validation OK",
+          "file path": "/tmp/templates/basic.yaml",
+          "description": "Template validation",
+          "message": "Template validation is OK",
+          "status code": 4
+        }
+      ]
     }
-  ]
-}
 
 Security impact
 ---------------
