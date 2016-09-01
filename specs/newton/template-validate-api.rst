@@ -180,7 +180,7 @@ None
 Dependencies
 ============
 
-Depends on the template validation bluprints
+Depends on the template validation blueprints
 
 Testing
 =======
