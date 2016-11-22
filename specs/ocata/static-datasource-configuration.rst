@@ -78,6 +78,18 @@ evaluator template.
 
 Discover entities from the static data source template.
 
+For backward compatibility, static data source will take over the control of the
+default configuration folder ``/etc/vitrage/static_datasource`` which was used
+by static physical datasource.
+
+Both legacy format and new format will be placed in the same folder. static
+datasource parse the file and check the existence of ``meta`` to decide which
+engine to use. If not found, proxy the job to static physical datasource and
+print a deprecation warning.
+
+Static physical datasource will be disabled by default and throws exception if
+running standalone.
+
 Alternatives
 ------------
 
