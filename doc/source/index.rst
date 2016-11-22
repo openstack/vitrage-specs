@@ -1,18 +1,35 @@
 .. vitrage-specs documentation master file
 
-======================
-Vitrage Specifications
-======================
+Vitrage Project Specifications
+==============================
 
-Mitaka specs:
+Mitaka
+------
 
 .. toctree::
-    :glob:
-    :maxdepth: 1
+   :glob:
+   :maxdepth: 1
 
-    specs/mitaka/*
+   specs/mitaka/*
 
-==================
+Newton
+------
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/newton/*
+
+Newton
+------
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/ocata/*
+
 Indices and tables
 ==================
 
