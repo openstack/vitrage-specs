@@ -7,9 +7,9 @@ Team and repository tags
 
 .. Change things from this point on
 
-===============================
+================================
 OpenStack Vitrage Specifications
-===============================
+================================
 
 This git repository is used to hold approved design specifications for additions
 to the Vitrage project. Reviews of the specs are done in gerrit, using a similar

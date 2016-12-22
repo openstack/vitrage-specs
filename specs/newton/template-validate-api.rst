@@ -33,16 +33,6 @@ The template validate API returns a result that contains the following fields:
 #. message - error message
 #. status code
 
-Alternatives
-------------
-
-None
-
-Data model impact
------------------
-
-None
-
 REST API impact
 ---------------
 
@@ -52,7 +42,7 @@ Template Validate
 Validate Vitrage template(s)
 
 POST /
-~~~~~
+~~~~~~
 
 Headers
 ^^^^^^^
@@ -126,38 +116,6 @@ Response Examples
       ]
     }
 
-Security impact
----------------
-
-None
-
-Pipeline impact
----------------
-
-None
-
-Other end user impact
----------------------
-
-None
-
-Performance/Scalability Impacts
--------------------------------
-
-None
-
-
-Other deployer impact
----------------------
-
-None
-
-Developer impact
-----------------
-
-None
-
-
 Implementation
 ==============
 
@@ -165,17 +123,6 @@ Assignee(s)
 -----------
 
 liat har-tal <liat.har-tal@nokia.com>
-
-
-Work Items
-----------
-
-None
-
-Future lifecycle
-================
-
-None
 
 Dependencies
 ============

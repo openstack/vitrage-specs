@@ -20,54 +20,8 @@ Missing visualization of the system status.
 Proposed change
 ===============
 
-We will present the system health in sunburest graph with color and labels that represnt their status
-
-Alternatives
-------------
-
-None
-
-Data model impact
------------------
-
-None
-
-REST API impact
----------------
-
-None
-
-Security impact
----------------
-
-None
-
-Pipeline impact
----------------
-
-None
-
-Other end user impact
----------------------
-
-None
-
-Performance/Scalability Impacts
--------------------------------
-
-None
-
-
-Other deployer impact
----------------------
-
-None
-
-Developer impact
-----------------
-
-None
-
+We will present the system health in sunburest graph with color and labels
+that represnt their status
 
 Implementation
 ==============
@@ -77,33 +31,3 @@ Assignee(s)
 
 Primary assignee:
 	alon-heller <alon.heller@alcatel-lucent.com>
-
-Work Items
-----------
-
-None
-
-Future lifecycle
-================
-
-None
-
-Dependencies
-============
-
-None
-
-Testing
-=======
-
-None
-
-Documentation Impact
-====================
-
-None
-
-References
-==========
-
-None

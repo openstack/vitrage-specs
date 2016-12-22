@@ -21,8 +21,8 @@ Newton
 
    specs/newton/*
 
-Newton
-------
+Ocata
+-----
 
 .. toctree::
    :glob:
