@@ -118,8 +118,15 @@ Other contributors:
 Work Items
 ----------
 
-- Create the skeleton template
-- Include unit test on the generated datasource
+- Create datasource skeleton template
+  - driver
+  - transformer
+- Create unit test skeleton template
+  - test driver
+  - test transformer
+  - mock configuration
+  - mock driver
+  - trace generator
 - Templates for datasource with different update methods
 
 Dependencies
