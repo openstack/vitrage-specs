@@ -30,6 +30,15 @@ Ocata
 
    specs/ocata/*
 
+Pike
+----
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/pike/*
+
 Indices and tables
 ==================
 
