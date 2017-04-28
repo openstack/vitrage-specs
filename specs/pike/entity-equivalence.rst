@@ -55,11 +55,11 @@ Add a new file (or a set of files) that define equivalence between entities
 These definitions will take effect globally, i.e. for every other template
 
 The evaluator will duplicate every scenario for every equivalent alarm
-automatically. For example, in case of the condition:: yaml
+automatically. For example, in case of the condition::
 
-    condition: nagios_host_problem_on_host and host_contains_vm``
+    condition: nagios_host_problem_on_host and host_contains_vm
 
-Two conditions will be created internally:: yaml
+Two conditions will be created internally::
 
     condition: nagios_host_problem_on_host and host_contains_vm
     condition: zabbix_host_problem_on_host and host_contains_vm
