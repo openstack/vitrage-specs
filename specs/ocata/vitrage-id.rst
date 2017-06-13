@@ -41,8 +41,11 @@ Template IDs should be changed back from a calculated String to generated uuid, 
 
 Datasources:
  - key / value tests : fix field names.
- - Transformers: Instead of the current neighbor Vitrage ID, generate UUID. It will be dropped at a later stage in the processor, in case the entity already exists in the Graph.
- - Processor: Checking if an entity exists in the graph: The entity is currently queried in the Graph according to its Vitrage ID. Instead, it will be queried according to the parameters set. If the entity exists, it’s original Vitrage ID will be used. Otherwise, the newly generated vitrage ID is used.
+ - Transformers: No change is needed in the Transformers.
+ - Processor: Checking if an entity exists in the graph: The entity is currently queried in the
+  Graph according to its Vitrage ID. Instead, it will be queried according to the parameters set.
+  If the entity exists, it’s original Vitrage ID will be used. Otherwise, a new UUID will be
+  generated for vitrage ID via openstack UUIDUtils' generate_uuid.
 
 
 Update all necessary tests.
