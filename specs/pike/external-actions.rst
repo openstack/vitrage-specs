@@ -123,6 +123,87 @@ Disadvantages:
 * mark-down use case is not supported by this solution
 
 
+Calculate the action_target
+---------------------------
+Every "regular" action (raise_alarm, set_state, add_causal_relationship) has
+an action_target block. The action_target has no meaning for the external
+actions, since they are managed by an external engine that does not have a
+"target" terminology.
+
+The problem is that the action_target is essential for
+the subgraph-matching calculations, in order to calculate the connected
+components.
+
+The proposed solution
+~~~~~~~~~~~~~~~~~~~~~
+For external actions, we will automatically calculate an action
+target. The target will be selected arbitrarily from the set of possible
+targets. In complex conditions that involve {and, or, not} finding the target
+might not be trivial. Some more-complex conditions will not be supported for
+external actions, due to this reason.
+
+
+The calculation method:
+
+* And condition - any vertex that is part of the condition can be a target
+* Not condition - no vertex that is part of the condition can be a target
+* Or condition - the target should be a vertex that appears in any "positive"
+  part (i.e. one that does not have a 'not' in front of it) of the Or condition
+
+Examples:
+~~~~~~~~~
+
+**Note:** In some cases it is impossible to find a valid target. They are
+marked with '/'.
+
+The template validation should fail in these cases, for **all kinds** of
+actions.
+
+
++----------------------------------------------------------+-----------------+
+| Condition                                                | Possible targets|
++----------------------------------------------------------+-----------------+
+| a_in_error_status                                        | a               |
++----------------------------------------------------------+-----------------+
+| a_contains_b                                             | a, b            |
++----------------------------------------------------------+-----------------+
+| a_contains_b or a_contains_c                             | a               |
++----------------------------------------------------------+-----------------+
+| a_contains_b or a_contains_c or a_contains_d             | a               |
++----------------------------------------------------------+-----------------+
+| a_in_error_status or a_contains_c or a_contains_d        | a               |
++----------------------------------------------------------+-----------------+
+| a_contains_b or a_contains_c or b_contains_d             | Not Supported   |
++----------------------------------------------------------+-----------------+
+| a_contains_b and a_contains_c                            | a, b, c         |
++----------------------------------------------------------+-----------------+
+| a_contains_b and a_contains_c and a_contains_d           | a, b, c, d      |
++----------------------------------------------------------+-----------------+
+| a_contains_b or (a_contains_c and a_contains_d)          | a               |
++----------------------------------------------------------+-----------------+
+| a_contains_b or (a_contains_c and b_contains_d)          | a,b             |
++----------------------------------------------------------+-----------------+
+| not a_contains_b                                         | Not Supported   |
++----------------------------------------------------------+-----------------+
+| not a_in_error_status                                    | Not Supported   |
++----------------------------------------------------------+-----------------+
+| a_contains_b or not a_contains_c                         | Not Supported   |
++----------------------------------------------------------+-----------------+
+| a_contains_b or (a_contains_c and not a_contains_d)      | a               |
++----------------------------------------------------------+-----------------+
+| a_contains_b or (not a_contains_c and not a_contains_d)  | Not Supported   |
++----------------------------------------------------------+-----------------+
+
+
+Alternatives to calculating the action_target
+---------------------------------------------
+We can decide that an external action requires an action_target like all other
+actions. This will simplify the implementation, but is logically wrong.
+The action_target will serve as a "helper entity" for the subgraph-matching,
+and it should not be the end user's role to help fixing implementation issues.
+As far as the external engine is concerned, the action_target has no meaning.
+
+
 Data model impact
 -----------------
 
