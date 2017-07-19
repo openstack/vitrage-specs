@@ -37,7 +37,7 @@ Pike
    :glob:
    :maxdepth: 1
 
-   specs/pike/*
+   specs/pike/implemented/*
 
 Indices and tables
 ==================
