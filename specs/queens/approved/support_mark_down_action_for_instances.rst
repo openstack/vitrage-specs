@@ -13,8 +13,8 @@ Include the URL of your launchpad blueprint:
 https://blueprints.launchpad.net/vitrage/+spec/add-nova-reset-state-notifier
 
 When a host is marked as down, all the servers which are launched at the host
-should be with error status. A new notifier will be added to call Nova API to
-reset server state.
+should be with error status. Nova notifier will be extended to reset server
+state.
 
 Problem description
 ===================
@@ -24,17 +24,18 @@ receives alarm notifications from the Doctor monitor, it should map the
 physical resources to virtual resources and set their states appropriately.
 For the host down scenario, currently Vitrage only support to mark host down,
 the states of the servers which are launched at the host are still 'Ok' in
-Nova. So a new notifier should be added to call Nova API to reset server state.
-
+Nova. And also in a real scenario, notifying Nova would help the user to get
+a clear picture of the state of its instances. So Nova notifier should be
+extended to call 'reset-state' API to reset server state.
 
 Proposed change
 ===============
 
-Add a 'execute_nova' action that under host down conditions in Vitrage
+Reuse 'mark_down' action type and set 'instance' as 'action_target' in Vitrage
 template which will call Nova api: 'reset-state' to set instance state.
 
-Examples
---------
+Doctor Example
+---------------
 
 .. code-block:: yaml
 
@@ -42,12 +43,9 @@ Examples
     condition: host_down_alarm_on_host and host_contains_instance and alarm_on_instance
     actions:
      - action:
-        action_type: execute_nova
-　　　　　properties:
-          api_call: reset-state
-          parameters:
-            instance: instance1
-            state: error
+        action_type: mark_down
+        action_target:
+          target: instance
 
 Alternatives
 ------------
@@ -77,8 +75,9 @@ None
 Deployer impact
 ---------------
 
-To use the Nova notifier there is a need to define it in the Vitrage config
-file, and in addition add the host_down_scenario template in Vitrage.
+To use the Nova notifier, there is a need to define it in the Vitrage config
+file, and in addition use the 'mark_down' action for instances in Vitrage
+template.
 
 Developer impact
 ----------------
@@ -102,7 +101,7 @@ Primary assignee:
 Work Items
 ----------
 
-- Implement the nova reset-state notifier and tests
+- Implement the 'mark_down' action for instances and tests
 - Modify the host_down_scenario template for calling Nova reset-state
 
 Dependencies
@@ -118,7 +117,7 @@ Unit tests and tempest tests need to be added.
 Documentation Impact
 ====================
 
-The usage of the nova reset-state notifier will be documented.
+The usage of the 'mark_down' action for instances will be documented.
 
 
 References
