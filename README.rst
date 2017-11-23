@@ -62,3 +62,9 @@ confidence in the Jenkins result), please execute the following command::
 
 After running ``tox``, the documentation will be available for viewing in HTML
 format in the ``doc/build/`` directory.
+
+To build the document automatically on changes, use the command::
+
+  $ tox -e autobuild
+
+Then open in a browser http://localhost:8000
