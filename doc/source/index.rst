@@ -63,6 +63,15 @@ Approved
 
    specs/queens/approved/*
 
+Implemented
+^^^^^^^^^^^
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/queens/implemented/*
+
 Indices and tables
 ==================
 
