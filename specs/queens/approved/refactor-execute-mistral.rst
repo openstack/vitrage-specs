@@ -37,7 +37,7 @@ action definition:
          timeout: 10
          force: false
 
-Instead, we should gather all optional parameters (timeout and my_param) under
+Instead, we should gather all optional parameters (timeout and force) under
 an 'input' section.
 
 
@@ -55,6 +55,15 @@ The second part is to define a way to describe which attribute of a specific
 entity should be passed to the workflow. The suggested solution is to use
 a syntax that is similar to the HOT template.
 
+We will introduce a get_attr() function with the following parameters:
+
+* ``resource template_id``: the id of the resource inside the template. Note
+  that the resource must be part of the condition.
+
+* ``attribute``: the name of the attribute to use. The attribute will be taken
+  from the resource vertex in the graph, if the condition is met.
+
+
 .. code-block:: yaml
 
  - scenario:
@@ -70,15 +79,13 @@ a syntax that is similar to the HOT template.
                timeout: 10
                force: false
 
-Note that the 'host' must be part of the scenario condition.
-
 
 Alternatives
 ------------
 
 One alternative is to replace the get_attr with a shorter syntax. In this case,
 we will refer to an entity attribute by the entity template-id and the
-attribute name. For example, instance.ip_address will mark the ip_address
+attribute name. For example, host.ip_address will mark the ip_address
 attribute of the instance.
 
 The example above will look like:
