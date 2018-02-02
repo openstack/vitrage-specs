@@ -145,7 +145,7 @@ The changes shall be covered by new unit test and tempest test.
 Documentation Impact
 ====================
 Update to Vitrage API Documentation; i.e. the new API will be added under
-https://github.com/openstack/vitrage/blob/master/doc/source/vitrage-api.rst
+https://github.com/openstack/vitrage/blob/master/doc/source/contributor/vitrage-api.rst
 
 
 References
