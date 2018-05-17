@@ -4,11 +4,11 @@
 
  http://creativecommons.org/licenses/by/3.0/legalcode
 
-=============================
-Datasource Skeleton Generator
-=============================
+===================
+Datasource Scaffold
+===================
 
-https://blueprints.launchpad.net/vitrage/+spec/datasource-skeleton-generator
+https://blueprints.launchpad.net/vitrage/+spec/datasource-scaffold
 
 A command line tool to generate skeleton of new datasource. A skeleton contains
 stubs of required classes and methods as described in the `design specs`_,
