@@ -43,9 +43,9 @@ Datasources:
  - key / value tests : fix field names.
  - Transformers: No change is needed in the Transformers.
  - Processor: Checking if an entity exists in the graph: The entity is currently queried in the
-  Graph according to its Vitrage ID. Instead, it will be queried according to the parameters set.
-  If the entity exists, it’s original Vitrage ID will be used. Otherwise, a new UUID will be
-  generated for vitrage ID via openstack UUIDUtils' generate_uuid.
+   Graph according to its Vitrage ID. Instead, it will be queried according to the parameters set.
+   If the entity exists, it’s original Vitrage ID will be used. Otherwise, a new UUID will be
+   generated for vitrage ID via openstack UUIDUtils' generate_uuid.
 
 
 Update all necessary tests.

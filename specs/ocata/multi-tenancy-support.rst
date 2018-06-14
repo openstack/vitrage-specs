@@ -21,16 +21,15 @@ Proposed change
 ===============
 
 Here is a description, for each of the Vitrage APIs, how it should behave for each tenant:
+
 Get alarms:
- 1.	Find all the alarms with the requested project_id (if the project is admin then show also alarms that has no project_id property)
+ 1. Find all the alarms with the requested project_id (if the project is admin then show also alarms that has no project_id property)
  2. Find all the resources with the requested project_id and return all the alarms that are attached to them.
  3. Merge the results from the previous steps and return it.
 
 Get RCA:
- 1.	Find all the alarms that this alarm has caused, recursively. When reaching an alarm
-    that is not of same project_id (or on resource of same project_id), stop the recursion, including this last alarm in the response.
- 2. Find all the alarms that caused this alarm, recursively. When reaching an alarm that
-    is not of same project_id (or on resource of same project_id), stop the recursion, including this last alarm in the response.
+ 1.	Find all the alarms that this alarm has caused, recursively. When reaching an alarm that is not of same project_id (or on resource of same project_id), stop the recursion, including this last alarm in the response.
+ 2. Find all the alarms that caused this alarm, recursively. When reaching an alarm that is not of same project_id (or on resource of same project_id), stop the recursion, including this last alarm in the response.
  3. Merge the results from the previous steps and return it.
 
 Get Topology:

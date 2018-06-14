@@ -192,5 +192,5 @@ adding actions should be documented.
 
 References
 ==========
-.. [#first] https://wiki.openstack.org/wiki/Mistral
-.. [#second] https://docs.openstack.org/rally/latest/
+ - https://wiki.openstack.org/wiki/Mistral
+ - https://docs.openstack.org/rally/latest/

@@ -63,9 +63,8 @@ implements the three methods:
 * Method that returns key fields and their order.The key fields are mandatory
 * Method that returns a key by given an entity event
 
-*************
 Output Object
-*************
+-------------
 
 The transformer returns an Entity Wrapper, which is a tuple containing an
 entity vertex and a list of (vertex,edge) pairs that describe the entity

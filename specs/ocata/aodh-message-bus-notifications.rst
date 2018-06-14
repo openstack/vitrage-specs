@@ -22,14 +22,18 @@ Proposed change
 ===============
 
 Aodh `update_method` in vitrage config file will be configured with:
+
 /etc/vitrage/vitrage.conf
-```
+::
+
     [aodh]
     update_method = push
 
 Add a new notification topic in Aodh config file:
+
 /etc/aodh/aodh.conf
-```
+::
+
     [oslo_messaging_notifications]
     topics = vitrage_notifications
 
@@ -77,8 +81,8 @@ performance improvement of getting Aodh alarms
 Other deployer impact
 ---------------------
 
-** Config `update_method` as 'push' in `Aodh` section in vitrage config file.
-** Add the `vitrage_notifications` topic in `oslo_messaging_notifications`
+ - Config `update_method` as 'push' in `Aodh` section in vitrage config file.
+ - Add the `vitrage_notifications` topic in `oslo_messaging_notifications`
    section in Aodh config file.
 
 Developer impact

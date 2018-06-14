@@ -96,7 +96,8 @@ Each result describes the full validation (syntax and content) of one template f
 Response Examples
 ^^^^^^^^^^^^^^^^^
 
-::
+.. code-block:: json
+
     {
       "results": [
         {

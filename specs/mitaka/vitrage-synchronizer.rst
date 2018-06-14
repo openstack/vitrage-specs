@@ -113,12 +113,12 @@ Collector plugin
 - samples OS services, Nagios, etc.
 - via each OS service REST API
 - method of collection:
-   retrieve OS service elements list. For the purposes of:change
-   notifications - as part of the periodic collection of the latest snapshot
-    we'd use this method of collection against OS services which doesn't
-    propagates change notification.run on its own collection subprocesses
-    how to discover a change once a snapshot is collected, we'd like to know
-    which entity was changed from the latest time a snapshot was taken in order
+  retrieve OS service elements list. For the purposes of:change
+  notifications - as part of the periodic collection of the latest snapshot
+  we'd use this method of collection against OS services which doesn't
+  propagates change notification.run on its own collection subprocesses
+  how to discover a change once a snapshot is collected, we'd like to know
+  which entity was changed from the latest time a snapshot was taken in order
   to enable this, we'd keep a baseline - a data structure which contains for each OS service entity (such as a vm instance), its ID + it latest collection timestamp or a hash which represents its latest state.by comparing the latest snapshot of elements against the baseline, we'd know for which entity we'd like to propagate a notification for.collect deltas for services which reveals this functionality for the purposes of change notifications this is the easy case, where change notifications are simply passed on to whoever registered for them
 - deployment - as a library
 

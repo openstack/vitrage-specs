@@ -42,15 +42,6 @@ Implemented
 
    specs/pike/implemented/*
 
-Approved
-^^^^^^^^
-
-.. toctree::
-   :glob:
-   :maxdepth: 1
-
-   specs/pike/approved/*
-
 Queens
 ------
 

@@ -24,7 +24,7 @@ has a lot of overlapping with the evaluator templates.
 
 In static configuration, there are ``entities`` and their ``relationships``
 
-.. highlight:: yaml
+.. code-block:: yaml
 
   - entities
     - {entity}
@@ -32,7 +32,7 @@ In static configuration, there are ``entities`` and their ``relationships``
 
 In each entity
 
-.. highlight:: yaml
+.. code-block:: yaml
 
   - name:
     id:
@@ -43,7 +43,7 @@ In each entity
 In evaluator templates we define: ``entities``, ``relationship`` and
 ``scenarios``. Each scenario has a condition and actions.
 
-.. highlight:: yaml
+.. code-block:: yaml
 
   - definitions
     - entities
@@ -171,4 +171,4 @@ New format of the template shall be documented.
 References
 ==========
 
-- `http://lists.openstack.org/pipermail/openstack-dev/2016-September/102678.html`_
+None
