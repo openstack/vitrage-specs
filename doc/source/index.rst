@@ -1,7 +1,11 @@
 .. vitrage-specs documentation master file
 
+==============================
 Vitrage Project Specifications
 ==============================
+
+Specifications
+==============
 
 Mitaka
 ------

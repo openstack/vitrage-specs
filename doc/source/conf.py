@@ -19,18 +19,16 @@ import sys
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-sys.path.insert(0, os.path.abspath('.'))
+# sys.path.insert(0, os.path.abspath('.'))
 
 # -- General configuration -----------------------------------------------------
 #
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
 extensions = [
-    'sphinx.ext.autodoc',
     'sphinx.ext.todo',
-    'sphinx.ext.viewcode',
     'sphinx.ext.graphviz',
-    # 'oslosphinx',
+    'openstackdocstheme',
     'yasfb',
 ]
 
@@ -47,6 +45,11 @@ try:
     extensions.append('sphinxcontrib.spelling')
 except ImportError:
     pass
+
+# openstackdocstheme options
+html_theme = 'openstackdocs'
+repository_name = 'openstack/vitrage-specs'
+use_storyboard = True
 
 # The suffix of source filenames.
 source_suffix = '.rst'
@@ -129,11 +132,6 @@ man_pages = []
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
 #html_favicon = None
-
-# If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
-# using the given strftime format.
-git_cmd = "git log --pretty=format:'%ad, commit %h' --date=local -n1"
-html_last_updated_fmt = os.popen(git_cmd).read()
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.
