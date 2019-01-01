@@ -88,6 +88,18 @@ Approved
 
    specs/rocky/approved/*
 
+Stein
+-----
+
+Approved
+^^^^^^^^
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   specs/stein/approved/*
+
 Indices and tables
 ==================
 
