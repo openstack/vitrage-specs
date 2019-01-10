@@ -43,7 +43,7 @@ A ``Parameters`` section can be added to standard templates. Each ``parameter``
 will hold two optional fields:
 
 * ``description``
-* ``deafult``
+* ``default``
 
 All values will be strings.
 
