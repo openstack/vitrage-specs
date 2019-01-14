@@ -64,11 +64,7 @@ An example of a Prometheus alert:
             "vitrage"
         ],
         "startsAt": "2018-12-26T15:22:07.589431274Z",
-        "status": {
-            "inhibitedBy": [],
-            "silencedBy": [],
-            "state": "active"
-        }
+        "status": "firing"
     }
 
 
@@ -112,11 +108,7 @@ Alert based on libvirt CPU metrics
             "vitrage"
         ],
         "startsAt": "2018-12-26T15:23:05.91446215Z",
-        "status": {
-            "inhibitedBy": [],
-            "silencedBy": [],
-            "state": "active"
-        }
+        "status": "firing"
     }
 
 **Vitrage resource**
@@ -151,11 +143,7 @@ Alert based on libvirt network metrics
             "vitrage"
         ],
         "startsAt": "2018-12-26T15:22:05.91446215Z",
-        "status": {
-            "inhibitedBy": [],
-            "silencedBy": [],
-            "state": "active"
-        }
+        "status": "firing"
     }
 
 
@@ -209,11 +197,7 @@ CPU metrics are scraped from the instance so ``instance`` label represents the r
             "vitrage"
         ],
         "startsAt": "2018-12-26T15:22:07.589431274Z",
-        "status": {
-            "inhibitedBy": [],
-            "silencedBy": [],
-            "state": "active"
-        }
+        "status": "firing"
     }
 
 
@@ -253,11 +237,7 @@ Alert based on node filesystem metric
             "vitrage"
         ],
         "startsAt": "2018-12-26T15:22:07.589431274Z",
-        "status": {
-            "inhibitedBy": [],
-            "silencedBy": [],
-            "state": "active"
-        }
+        "status": "firing"
     }
 
 
@@ -284,7 +264,7 @@ Prometheus configuration file structure
 The configuration file contains a list of ``alerts``.
 Each alert contains ``key`` and ``resource``.
 
-The ``key`` contains ``alertname`` and ``job`` labels which uniquely identify each alert.
+The ``key`` contains labels which uniquely identify each alert.
 
 The ``resource`` specifies how to identify in Vitrage the resource that the alert is on.
 It contains one or more Vitrage property names and corresponding Prometheus alert labels.
@@ -295,32 +275,27 @@ It contains one or more Vitrage property names and corresponding Prometheus aler
 .. code-block:: yaml
 
     alerts:
-    - alert:
-        key:
-          alertname: HighCpuOnVmAlert
-          job: libvirt
-        resource:
-          instance_name: domain
-          host_id: instance
-    - alert:
-        key:
-          alertname: HighTrafficOnBridge
-          job: libvirt
-        resource:
-          instance_name: domain
-          host_id: instance
-    - alert:
-        key:
-          alertname: AvgCPUTimeOnIdleMode
-          job: node
-        resource:
-          id: instance
-    - alert:
-        key:
-          alertname: HighInodeUsage
-          job: node
-        resource:
-          id: instance
+    - key:
+        alertname: HighCpuOnVmAlert
+        job: libvirt
+      resource:
+        instance_name: domain
+        host_id: instance
+    - key:
+        alertname: HighTrafficOnBridge
+        job: libvirt
+      resource:
+        instance_name: domain
+        host_id: instance
+    - key:
+        alertname: AvgCPUTimeOnIdleMode
+      resource:
+        id: instance
+    - key:
+        alertname: HighInodeUsage
+        job: node
+      resource:
+        id: instance
 
 
 Alternatives
