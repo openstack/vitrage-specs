@@ -91,14 +91,14 @@ Approved
 Stein
 -----
 
-Approved
-^^^^^^^^
+Implemented
+^^^^^^^^^^^
 
 .. toctree::
    :glob:
    :maxdepth: 1
 
-   specs/stein/approved/*
+   specs/stein/implemented/*
 
 Indices and tables
 ==================
