@@ -60,7 +60,7 @@ Example for a template with parameters
 .. code-block:: yaml
 
    metadata:
-     version: 3
+     version: 2
      type: standard
      name: host_affects_instance_prototype
      description: Template prototype for scenarios where a Zabbix alarm on a host affects its instances
