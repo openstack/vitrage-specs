@@ -48,8 +48,9 @@ except ImportError:
 
 # openstackdocstheme options
 html_theme = 'openstackdocs'
-repository_name = 'openstack/vitrage-specs'
-use_storyboard = True
+openstackdocs_repo_name = 'openstack/vitrage-specs'
+openstackdocs_auto_name = False
+openstackdocs_use_storyboard = True
 
 # The suffix of source filenames.
 source_suffix = '.rst'
@@ -96,7 +97,7 @@ add_module_names = False
 show_authors = False
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = 'native'
 
 # A list of ignored prefixes for module index sorting.
 modindex_common_prefix = ['vitrage-specs.']
